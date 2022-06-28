@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mt-3">
+      <small>Click on <b>'View Student'</b> to get more details about a student</small>
+      <table class="table">
+        <tr class="fw-bold">
+          <td>S/N</td>
+          <td>Full Name</td>
+          <td></td>
+        </tr>
+        <tr *ngFor="let i =index; let student of students" >
+          <td>{{i+1}}.</td>
+          <td>{{student.firstname + student.lastname}}</td>
+          <td><button class="btn bg-primary text-light" (click)="viewStudent(student)">View Student</button></td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-6">
+      <app-student-detail [currentStudent]="current"></app-student-detail>
+    </div>
+  </div>
+</div>
